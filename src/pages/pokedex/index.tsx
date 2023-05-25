@@ -20,13 +20,9 @@ const Pokedex = () => {
                 <h1 className={styles.title}>800 <b>Pokemons</b> for you to choose your favorite</h1>
                 <input type="text" className={styles.search} placeholder="Encuentra tu pokemon"/>
                 <div className={styles.filters}>
-                    <select name="cars" id="cars">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                    </select>
-                    <select name="cars" id="cars">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
+                    <select name="Tipos" id="Tipos">
+                        <option disabled>Tipos</option>
+                        {types.map(type => <option value="volvo">{type.name}</option>)}
                     </select>
                 </div>
                 <div className={styles.pokemons}>
