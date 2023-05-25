@@ -5,26 +5,26 @@ import useMenuContext from "../../hooks/useMenuContext";
 import { Link } from "react-router-dom";
 import { MenuContextProvider } from "../../context/menu";
 
+
 export const Header = () => {
 
-	const {switchBoll} = useMenuContext();
+	const {} = useMenuContext();
 
 	return (
 		<MenuContextProvider>
-			<header className={styles.header_background}>
+			<header>
         <div className={styles.header}>
           <img className={styles.logo} src={logo} alt="Logo principal do sistema"/>
-          <AiOutlineMenu className={styles.icon} onClick={()=> switchBoll()}/>
           <nav className={styles.nav}>
             <Link className={styles.menu} to="/">
               Home
               <div className={styles.underline}/>  
             </Link>  
-            <Link className={styles.menu} to="/">
+            <Link className={styles.menu} to="/pokedex">
               Pokedex
               <div className={styles.underline}/>
             </Link> 
-            <Link className={styles.menu} to="/">
+            <Link className={styles.menu} to="/legendaries">
               Lengendaries
               <div className={styles.underline}/>
             </Link>  
@@ -33,8 +33,15 @@ export const Header = () => {
               <div className={styles.underline}/>
             </Link>
           </nav>
+
+          
+          <AiOutlineMenu className={styles.icon}/>
         </div>
 
+
+        {/* <div className={styles.modal}>
+
+        </div> */}
 			</header>
 		</MenuContextProvider>
 	);
