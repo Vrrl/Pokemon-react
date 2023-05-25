@@ -13,7 +13,7 @@ interface ErrorProps {
  
 const Error = () => {
     const error = useRouteError() as ErrorProps
-
+    console.log(error)
     return (
         <section className={styles.section}>
             <p className={styles.number}>{error.status}</p>
