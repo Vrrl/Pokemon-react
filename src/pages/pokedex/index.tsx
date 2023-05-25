@@ -1,5 +1,6 @@
 import { Footer } from "../../components/footer/index";
 import { Header } from "../../components/header/index";
+import { Pokemoncard } from "../../components/pokemoncard/index";
 import styles from "./styles.module.css";
 
 
@@ -25,26 +26,12 @@ const Pokedex = () => {
                     </select>
                 </div>
                 <div className={styles.pokemons}>
-                    <div className={styles.pokemon}>
-                        <div className={styles.left}>
-                            <h6 className={styles.name}>Pyroar</h6>
-                            <div className={styles.status}>
-                                <div>
-                                    <div className={styles.value}>491</div>
-                                    <p>Attack</p>
-                                </div>
-                                <div>
-                                    <div className={styles.value}>491</div>
-                                    <p>Defense</p>
-                                </div>
-                            </div>
-                            <div className={styles.types}>
-                                <small>Grass</small>
-                                <small>Poison</small>
-                            </div>
-                        </div>
-                        <div className={styles.right}></div>
-                    </div>
+                    <Pokemoncard/>
+                    <Pokemoncard/>
+                    <Pokemoncard/>
+                    <Pokemoncard/>
+                    <Pokemoncard/>
+                    <Pokemoncard/>
                 </div>
             </div>
         <Footer/>
