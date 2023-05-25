@@ -1,3 +1,4 @@
+import { Footer } from "../../components/footer/index";
 import { Header } from "../../components/header/index";
 
 interface HomeProps {
@@ -6,7 +7,10 @@ interface HomeProps {
  
 const Home = () => {
     return (
-        <Header/>
+        <div>
+            <Header/>
+            <Footer/>
+        </div>
     );
 }
  
