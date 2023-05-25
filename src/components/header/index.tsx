@@ -8,7 +8,7 @@ import { MenuContextProvider } from "../../context/menu";
 
 export const Header = () => {
 
-	const {switchBoll} = useMenuContext();
+	const {} = useMenuContext();
 
 	return (
 		<MenuContextProvider>
