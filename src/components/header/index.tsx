@@ -20,11 +20,11 @@ export const Header = () => {
               Home
               <div className={styles.underline}/>  
             </Link>  
-            <Link className={styles.menu} to="/">
+            <Link className={styles.menu} to="/pokedex">
               Pokedex
               <div className={styles.underline}/>
             </Link> 
-            <Link className={styles.menu} to="/">
+            <Link className={styles.menu} to="/legendaries">
               Lengendaries
               <div className={styles.underline}/>
             </Link>  
