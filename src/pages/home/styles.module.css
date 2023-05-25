@@ -11,32 +11,33 @@
 
 .content{
     display: flex;
-    width: 900px;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .content .img{
-    width: 500px;
+    width: 550px;
 }
 
 .content .img img{
-    width: 500px;
+    width: 550px;
 }
 
 .content .msg{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
+    width: 600px;
+    margin-left: 60px;
 }
 
 .content .msg h1{
     font-family: 'Karla';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 72px;
-    line-height: 84px;
+    line-height: 70px;
     letter-spacing: 4px;
-
+    margin: 18px 0;
     color: #000000;
 }
 
@@ -46,13 +47,14 @@
     font-weight: 400;
     font-size: 22px;
     line-height: 37px;
+    margin: 18px 0;
 
     color: #000000;
 }
 
 .content .msg button{
     color: #000;
-    font-weight: 700px;
+    font-weight: 900px;
     font-size: 16px;
     padding: 14px 60px;
     background: #73D677;
@@ -61,4 +63,6 @@
     border: none;
     margin-top: 16px;
     cursor: pointer;
+
+    width: 230px;
 }
