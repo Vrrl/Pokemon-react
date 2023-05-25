@@ -29,7 +29,7 @@
 .content .msg{
     display: flex;
     flex-direction: column;
-    width: 600px;
+    max-width: 600px;
     margin-left: 60px;
 }
 
