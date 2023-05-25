@@ -13,9 +13,7 @@ const Home = () => {
                 <div className={styles.msg}>
                     <h1><b>Find</b> all your favorite <b>Pokemon</b></h1>
                     <p>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
-                    <Link to='/pokedex'>
-                        <button>See Pokemons</button>
-                    </Link>
+                    <Link to='/pokedex'><button>See Pokemons</button></Link>
                 </div>
                 <div className={styles.img}>
                     <img src={pikachuImg}></img>
