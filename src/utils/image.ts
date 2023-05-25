@@ -1,3 +1,4 @@
+// @ts-ignore
 import ColorThief from 'colorthief'
 
 export function getAverageRGB(src: string): Promise<string> {

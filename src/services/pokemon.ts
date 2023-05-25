@@ -1,5 +1,5 @@
-import { PokemonData } from "../context/pokemon_context";
-import { getAverageRGB, getDominantRGB } from "../utils/image";
+import { PokemonData } from "../context/pokemon";
+import { getDominantRGB } from "../utils/image";
 import { get } from "./generic";
 
 export interface GeneralListInterface{

@@ -2,16 +2,13 @@ import { Footer } from "../../components/footer/index";
 import { Header } from "../../components/header/index";
 import { Pokemoncard } from "../../components/pokemoncard/index";
 import styles from "./styles.module.css";
-import { PokemonData, usePokemon } from '../../context/pokemon'
+import { usePokemon } from '../../context/pokemon'
 
-interface PokedexProps {
-    
-}
+
  
 const Pokedex = () => {
-    const {pokemonList, searchValue, types, abilities,
-        handleGetPrevPage, handleGetNextPage, handleChangeSearchValue, 
-        handleChangeTypeFilter, handleChangeAbilityFilter} = usePokemon()
+    // @ts-ignore
+    const {pokemonList, searchValue, types, abilities, handleGetPrevPage, handleGetNextPage, handleChangeSearchValue,handleChangeTypeFilter, handleChangeAbilityFilter} = usePokemon()
 
     return (
         <div className={styles.page}>

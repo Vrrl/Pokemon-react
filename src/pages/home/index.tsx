@@ -5,10 +5,6 @@ import pikachuImg from '../../assets/pikachu_home.png'
 
 
 
-interface HomeProps {
-    
-}
- 
 const Home = () => {
     return (
         <div className={styles.page}>
