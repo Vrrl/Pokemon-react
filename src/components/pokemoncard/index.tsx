@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import { PokemonData, typeColor } from '../../context/pokemon_context'
+import { PokemonData, typeColor } from '../../context/pokemon'
 
 interface Props {
   pokemonData: PokemonData
@@ -25,12 +25,13 @@ export const Pokemoncard = ({pokemonData}: Props) => {
         <div className={styles.types}>
           {
             pokemonData.types.map((type, i) => (
-              <small className={i === 0 ? styles.type : styles.typeMargin}>{type}</small>
+              <small className={i === 0 ? styles.type : styles.typeMargin}
+              style={{backgroundColor: typeColor[type]}}>{type}</small>
             ))
           }
         </div>
       </div>
-      <div className={styles.right}>
+      <div className={styles.right} style={{background: pokemonData.backgroundColor}}>
         <img src={pokemonData.sprite}/>
       </div>
     </div>

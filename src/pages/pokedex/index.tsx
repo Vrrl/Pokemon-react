@@ -2,13 +2,17 @@ import { Footer } from "../../components/footer/index";
 import { Header } from "../../components/header/index";
 import { Pokemoncard } from "../../components/pokemoncard/index";
 import styles from "./styles.module.css";
-
+import { PokemonData, usePokemon } from '../../context/pokemon'
 
 interface PokedexProps {
     
 }
  
 const Pokedex = () => {
+    const {pokemonList, searchValue, types, abilities,
+        handleGetPrevPage, handleGetNextPage, handleChangeSearchValue, 
+        handleChangeTypeFilter, handleChangeAbilityFilter} = usePokemon()
+
     return (
         <div className={styles.page}>
         <Header/>
@@ -26,12 +30,7 @@ const Pokedex = () => {
                     </select>
                 </div>
                 <div className={styles.pokemons}>
-                    <Pokemoncard/>
-                    <Pokemoncard/>
-                    <Pokemoncard/>
-                    <Pokemoncard/>
-                    <Pokemoncard/>
-                    <Pokemoncard/>
+                {pokemonList.map(pokemonData => <Pokemoncard pokemonData={pokemonData}/>)}
                 </div>
             </div>
         <Footer/>

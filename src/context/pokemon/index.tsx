@@ -1,6 +1,7 @@
 import { ReactNode, createContext, useContext, useEffect, useRef, useState } from "react"
-import { getSpecificPokemon, listPokemon } from "../services/pokemon"
-import { useLoading } from "./loading_context"
+import { getSpecificPokemon, listPokemon } from "../../services/pokemon"
+import { useLoading } from "../loading"
+
 
 export interface PokemonData{
     id: number
@@ -47,6 +48,7 @@ const PokemonContext = createContext<PokemonContextInterface>(pokemonContextDefa
 
 export function usePokemon(){
     return useContext(PokemonContext)
+
 }
 
 interface ProviderProps{
@@ -75,19 +77,17 @@ export const PokemonProvider = ({children}: ProviderProps) => {
     const [searchValue, setSearchValue] = useState<string>("")
     const [types, setTypes] = useState<Filter[]>([])
     const [abilities, setAbilities] = useState<Filter[]>([])
-
     useEffect(() => {
         getPokemonList(page)
     }, [])
-
     const getPokemonList = async (page: number) => {
         loading.show()
+        
         try {
             const generalList = await listPokemon(page, rows.current)
             const pokemons = await Promise.all(generalList.results.map(async (pokemon) => await getSpecificPokemon(pokemon.name)))
             setCount(generalList.count)
             setPokemonList(pokemons)
-
             const newTypes : Filter[] = []
             const newAbilities : Filter[] = []
             for(const pokemon of pokemons){
@@ -102,8 +102,9 @@ export const PokemonProvider = ({children}: ProviderProps) => {
             } 
             setTypes(newTypes)
             setAbilities(newAbilities)
-        } catch (error) {
             
+        } catch (error) {
+            console.log(error)
         }
         loading.hide()
     }

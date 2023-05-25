@@ -5,6 +5,8 @@ import Error from './pages/error'
 import Home from './pages/home'
 import "./index.css"
 import Pokedex from './pages/pokedex/index'
+import { LoadingProvider } from './context/loading/index'
+import { PokemonProvider } from './context/pokemon/index'
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <LoadingProvider>
+      <PokemonProvider>
+        <RouterProvider router={router} />
+
+      </PokemonProvider>
+
+    </LoadingProvider>
   </React.StrictMode>,
 )
