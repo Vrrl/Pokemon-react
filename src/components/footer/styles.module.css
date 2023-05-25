@@ -1,0 +1,18 @@
+.footer{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.footer p{
+  padding: 0 60px;
+  color: #212121;
+}
+
+.footer a{
+  padding: 0 60px;
+  color: #212121;
+}
