@@ -2,7 +2,7 @@ import { Footer } from "../../components/footer/index";
 import { Header } from "../../components/header/index";
 import { Pokemoncard } from "../../components/pokemoncard/index";
 import styles from "./styles.module.css";
-import { usePokemon, typeColor } from '../../context/pokemon'
+import { usePokemon } from '../../context/pokemon'
 import Modal from 'react-modal';
 import { useState } from "react";
 
@@ -22,9 +22,8 @@ const modalStyles = {
   };
 
 const Pokedex = () => {
-    const { pokemonList, searchValue, types, abilities,
-        handleGetPrevPage, handleGetNextPage, handleChangeSearchValue,
-        handleChangeTypeFilter, handleChangeAbilityFilter } = usePokemon()
+    const { pokemonList, types,
+        handleGetPrevPage, handleGetNextPage } = usePokemon()
     const [modalIsOpen, setIsOpen] = useState<boolean>(false)
 
     const [modalPokemon, setModalPokemon] = useState<any>({})
@@ -54,6 +53,7 @@ const Pokedex = () => {
                     </select>
                 </div>
                 <div className={styles.pokemons}>
+                {/* @ts-ignore */}
                 {pokemonList.map(pokemonData => <Pokemoncard pokemonData={pokemonData} onClick={() => openModal(pokemonData)} key={pokemonData.id}/>)}
                 </div>
 
@@ -76,6 +76,7 @@ const Pokedex = () => {
                         </div>
                         <div className={styles.modalabilities}>
                             <p>Abilities</p>
+                            {/* @ts-ignore */}
                             {modalPokemon && modalPokemon.abilities && modalPokemon.abilities.map(ab => <span>{ab} </span>)}
                         </div>
                         <div className={styles.modalhpxp}>

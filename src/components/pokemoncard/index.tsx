@@ -5,7 +5,7 @@ interface Props {
   pokemonData: PokemonData
   handleClick(): void
 }
-
+// @ts-ignore
 export const Pokemoncard = ({pokemonData, onClick}: Props) => {
 
   return (
