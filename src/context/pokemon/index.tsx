@@ -21,27 +21,19 @@ export interface PokemonData{
 export interface PokemonContextInterface{
     pokemonList: PokemonData[]
     pokemonCount: number
-    searchValue: string
     types: Filter[]
     abilities: Filter[]
     handleGetPrevPage(): void
     handleGetNextPage(): void
-    handleChangeSearchValue(value: string): void
-    handleChangeTypeFilter(name: string): void
-    handleChangeAbilityFilter(name: string): void
 }
 
 export const pokemonContextDefault: PokemonContextInterface = {
     pokemonList: [],
     pokemonCount: 0,
-    searchValue: "",
     types: [],
     abilities: [],
     handleGetPrevPage: () => {},
     handleGetNextPage: () => {},
-    handleChangeSearchValue: () => {},
-    handleChangeTypeFilter: () => {},
-    handleChangeAbilityFilter: () => {}
 }
 
 const PokemonContext = createContext<PokemonContextInterface>(pokemonContextDefault)
@@ -74,7 +66,6 @@ export const PokemonProvider = ({children}: ProviderProps) => {
     const [page, setPage] = useState<number>(1)
     const [count, setCount] = useState<number>(0)
     const rows = useRef<number>(9)
-    const [searchValue, setSearchValue] = useState<string>("")
     const [types, setTypes] = useState<Filter[]>([])
     const [abilities, setAbilities] = useState<Filter[]>([])
     useEffect(() => {
@@ -112,8 +103,6 @@ export const PokemonProvider = ({children}: ProviderProps) => {
     const getFilteredList = (): PokemonData[] => {
         const filteredList = pokemonList.filter(pokemonData => {
             let isOk = true
-            if(!pokemonData.name.toLowerCase().includes(searchValue.toLowerCase()))
-                isOk = false
             if(types.filter(t => t.selected).length > 0 &&
             !pokemonData.types.some(type => types.filter(t => t.selected).map(t => t.name).includes(type)))
                 isOk = false
@@ -141,14 +130,10 @@ export const PokemonProvider = ({children}: ProviderProps) => {
         <PokemonContext.Provider value={{
             pokemonList: getFilteredList(), 
             pokemonCount: count, 
-            searchValue: searchValue,
             types: types,
             abilities: abilities,
             handleGetPrevPage, 
-            handleGetNextPage,
-            handleChangeSearchValue,
-            handleChangeTypeFilter,
-            handleChangeAbilityFilter
+            handleGetNextPage
         }}>
             {children}
         </PokemonContext.Provider>
