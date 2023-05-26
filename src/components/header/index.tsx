@@ -5,10 +5,7 @@ import useMenuContext from "../../hooks/useMenuContext";
 import { Link } from "react-router-dom";
 import { MenuContextProvider } from "../../context/menu";
 
-
 export const Header = () => {
-
-	const {} = useMenuContext();
 
 	return (
 		<MenuContextProvider>
