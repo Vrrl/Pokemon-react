@@ -137,24 +137,6 @@ export const PokemonProvider = ({children}: ProviderProps) => {
         setPage(prev => prev + 1)
     }
 
-    const handleChangeSearchValue = (value: string) => {
-        setSearchValue(value)
-    }
-
-    const handleChangeTypeFilter = (name: string) => {
-        const newTypes = [...types]
-        const type = newTypes.find(type => type.name === name)
-        if(type) type.selected = !type.selected
-        setTypes(newTypes)
-    }
-
-    const handleChangeAbilityFilter = (name: string) => {
-        const newAbilities = [...abilities]
-        const ability = newAbilities.find(ability => ability.name === name)
-        if(ability) ability.selected = !ability.selected
-        setAbilities(newAbilities)
-    }
-
     return (
         <PokemonContext.Provider value={{
             pokemonList: getFilteredList(), 
