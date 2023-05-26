@@ -11,6 +11,23 @@
 
 .wrapper{
     max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.pagination{
+    margin: auto;
+}
+
+.pagination button{
+    cursor: pointer;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
 }
 
 .title{
@@ -73,6 +90,130 @@
 
 
 
+
+.modalwrapper{
+    display: grid;
+    grid-template-columns: 6fr 5fr;
+}
+.modalleft{
+    display: grid;
+    place-content: center;
+}
+
+.modalleft img{
+    max-width: 300px;
+    
+}
+
+.modalright {
+    background: linear-gradient(180deg, #00000057 42.19%, #d93e3000 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+.modaltitle{
+    margin: 26px 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modaltitle h1{
+    color: #FDFDFD;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+}
+
+.modaltitle div{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #F2CB07;
+    display: grid;
+    place-content: center;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.modalabilities{
+    margin: 12px 18px;
+    padding: 14px 18px;
+    width: 60%;
+    border-radius: 8px;
+    background-color: #FDFDFD;
+}
+
+.modalabilities small{
+    text-transform: capitalize;
+}
+
+.modalhpxp{
+    margin: 12px 18px;
+    padding: 14px 18px;
+    width: 85%;
+    border-radius: 8px;
+    background-color: #FDFDFD;
+
+    display: flex;
+    gap: 100px;
+}
+
+.modalhpxp > div > p{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.modalhpxp > div > h6{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.modalhpxp > div > div{
+    height: 5px;
+    width: 130px;
+    border-radius: 5px;
+}
+
+.modalattr{
+    margin: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modalattr > div{
+    width: 90px;
+    height: 85px;
+    background-color: #FDFDFD;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.modalattr > div > div{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: #000 solid 3px;
+    display: grid;
+    place-content: center;
+}
+
+.modalattr > div > p{
+    margin-top: 8px;
+}
 
 
 @media (max-width: 768px) {

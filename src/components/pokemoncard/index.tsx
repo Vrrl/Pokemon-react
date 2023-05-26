@@ -3,13 +3,13 @@ import { PokemonData, typeColor } from '../../context/pokemon'
 
 interface Props {
   pokemonData: PokemonData
-  // handleClick(): void
+  handleClick(): void
 }
-
-export const Pokemoncard = ({pokemonData}: Props) => {
+// @ts-ignore
+export const Pokemoncard = ({pokemonData, onClick}: Props) => {
 
   return (
-    <div className={styles.pokemon}>
+    <div onClick={onClick} className={styles.pokemon}>
       <div className={styles.left}>
         <h6 className={styles.name}>{pokemonData.name}</h6>
         <div className={styles.status}>
